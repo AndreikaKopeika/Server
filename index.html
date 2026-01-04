@@ -419,6 +419,23 @@
             .roadmap-grid, .features-grid { grid-template-columns: 1fr; }
             .ip-btn { font-size: 1rem; padding: 20px; }
         }
+
+        /* --- ROADMAP STATUSES UPDATE --- */
+        .roadmap-card.dead { border-top: 1px solid rgba(100, 100, 100, 0.2); opacity: 0.7; }
+        .roadmap-card.dead::before { background: #333; }
+        .roadmap-card.dead h3 { color: #777; }
+
+        .badge-dead {
+            background: rgba(255, 255, 255, 0.05);
+            color: #777;
+            border: 1px solid #444;
+            text-decoration: line-through;
+        }
+
+        /* Остальные стили (done, work, wait) оставляем как были */
+        .badge-done { background: rgba(0, 255, 157, 0.1); color: var(--success); border: 1px solid rgba(0, 255, 157, 0.2); }
+        .badge-work { background: rgba(255, 0, 60, 0.15); color: var(--accent); border: 1px solid rgba(255, 0, 60, 0.3); }
+        .badge-wait { background: rgba(255,255,255,0.05); color: #666; border: 1px solid rgba(255,255,255,0.1); }
     </style>
 </head>
 <body>
@@ -455,6 +472,7 @@
         </header>
 
         <!-- ROADMAP 2.0 -->
+<!-- ROADMAP 2.0 (UPDATED) -->
         <h2 class="section-title">Roadmap</h2>
         <div class="roadmap-grid">
 
@@ -464,34 +482,34 @@
                     <h3>Начальные тесты</h3>
                     <span class="status-badge badge-done">DONE</span>
                 </div>
-                <p>Сборка ядра, проверка лагов на картошке, установка основных плагинов защиты.</p>
+                <p>Сборка ядра Purpur, оптимизация под железо.</p>
             </div>
 
-            <!-- Step 2 (Active) -->
-            <div class="roadmap-card work" data-step="02">
+            <!-- Step 2 (CANCELLED) -->
+            <div class="roadmap-card dead" data-step="02">
                 <div class="roadmap-header">
-                    <h3>Базовые команды</h3>
-                    <span class="status-badge badge-work">IN PROGRESS</span>
+                    <h3><s>Базовые команды</s></h3>
+                    <span class="status-badge badge-dead">REJECTED</span>
                 </div>
-                <p>Добавление /tpa, /sethome и стартовых китов, чтобы вы не умирали в первую секунду.</p>
+                <p>Мы передумали. Никаких /tpa, /sethome и китов. Это убивает дух анархии. Ходите пешком или стройте метро в аду.</p>
             </div>
 
             <!-- Step 3 -->
-            <div class="roadmap-card wait" data-step="03">
+            <div class="roadmap-card work" data-step="03">
                 <div class="roadmap-header">
                     <h3>Доступ для пиратов</h3>
-                    <span class="status-badge badge-wait">PLANNED</span>
+                    <span class="status-badge badge-work">SOON</span>
                 </div>
-                <p>Открытие шлюзов для игроков без лицензии. Готовьтесь к наплыву читеров.</p>
+                <p>Открытие шлюзов для игроков без лицензии. (Нужна настройка AuthMe, чтобы не украли админку).</p>
             </div>
 
-            <!-- Step 4 -->
-            <div class="roadmap-card wait" data-step="04">
+            <!-- Step 4 (CANCELLED) -->
+            <div class="roadmap-card dead" data-step="04">
                 <div class="roadmap-header">
-                    <h3>Хостинг 24/7</h3>
-                    <span class="status-badge badge-wait">GOAL</span>
+                    <h3><s>Хостинг 24/7</s></h3>
+                    <span class="status-badge badge-dead">NOT NEEDED</span>
                 </div>
-                <p>Покупка нормального железа. Конец эры "сервер спит". Стабильный аптайм.</p>
+                <p>Ни один хостинг не даст мощности такой какая сейчас. Сервер работает, пока не спит Админ. Элитный доступ.</p>
             </div>
 
         </div>
